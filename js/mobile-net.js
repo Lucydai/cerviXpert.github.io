@@ -60,7 +60,7 @@ async function predButton() {
 		}).slice(0, 5);
 
 	document.getElementById("predict-box").style.display = "block";
-	document.getElementById("prediction").innerHTML = "MobileNet prediction <br><b>" + results[0].className + "</b>";
+	document.getElementById("prediction").innerHTML = "Cell Type <br><b>" + results[0].className + "</b>";
 
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
@@ -75,7 +75,7 @@ async function predButton() {
 
 function preprocessImage(image, modelName) {
 	let tensor = tf.browser.fromPixels(image)
-		.resizeNearestNeighbor([224, 224])
+		.resizeNearestNeighbor([128, 128])
 		.toFloat();
 
 	if (modelName === undefined) {
