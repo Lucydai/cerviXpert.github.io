@@ -60,7 +60,7 @@ async function predButton() {
 		}).slice(0, 5);
 
 	document.getElementById("predict-box").style.display = "block";
-	document.getElementById("prediction").innerHTML = "Cell Type <br><b>" + results[0].className + "</b>";
+	document.getElementById("prediction").innerHTML = "Cell Type <br><b>" + results[0].className + "</b>" + "<br><b> Accuracy: "+results[0].probability.toFixed(4)*100+"% </b>";
 
 	var ul = document.getElementById("predict-list");
 	ul.innerHTML = "";
